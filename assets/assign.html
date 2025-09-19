@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Assignment</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f7fb;
+      color: #333;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      background: #2a3d66;
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;   
+      margin-bottom: 20px;
+      color: #2a3d66;
+    }
+
+    form label {
+      display: block;
+      margin: 10px 0 6px;
+      font-weight: bold;
+    }
+
+    form input, form textarea, form select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    textarea {
+      resize: none;
+      height: 120px;
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      font-size: 18px;
+      background: #2a3d66;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #375ab7;
+    }
+
+    .success {
+      display: none;
+      text-align: center;
+      margin-top: 15px;
+      padding: 10px;
+      border-radius: 6px;
+      background: #d4edda;
+      color: #155724;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <header>📋 Create Assignment</header>
+
+  <div class="container">
+    <h2>Post Your Assignment Task</h2>
+    <form id="assignmentForm">
+      <label for="title">Assignment Title</label>
+      <input type="text" id="title" name="title" placeholder="Enter assignment title" required>
+
+      <label for="description">Description</label>
+      <textarea id="description" name="description" placeholder="Enter assignment details" required></textarea>
+
+      <label for="deadline">Deadline</label>
+      <input type="date" id="deadline" name="deadline" required>
+
+      <label for="points">Reward Points</label>
+      <input type="number" id="points" name="points" placeholder="Enter points" required>
+
+      <button type="submit">Create Assignment</button>
+    </form>
+
+    <div class="success" id="successMessage">
+      ✅ Assignment Created Successfully!
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("assignmentForm").addEventListener("submit", function(event){
+      event.preventDefault();
+      document.getElementById("successMessage").style.display = "block";
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>
